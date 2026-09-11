@@ -56,7 +56,7 @@ def ocr_extract(image_path):
 # APP + PATHS
 # ============================================================
 app = Flask(__name__)
-app.secret_key = "change-this-to-a-strong-secret-key"
+app.secret_key = os.environ.get("SECRET_KEY", "dev-only-change-me")
 
 USERS_CSV_FILE = os.path.join(app.root_path, "users.csv")
 PATIENTS_CSV_FILE = os.path.join(app.root_path, "patients.csv")
